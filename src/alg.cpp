@@ -35,7 +35,7 @@ class TPQueue {
 template<typename T>
   void TPQueue<T>::push(const T& value) {
   ITEM *tp = hd;
-  ITEM *im = create(
+  ITEM *im = create(value);
   while (tp && tp -> value.prior >= value.prior)
   tp = tp->nt;
   if (!tp && hd) {
