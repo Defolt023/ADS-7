@@ -10,7 +10,7 @@ class TPQueue {
   T value;
   ITEM *nt;
   ITEM *pv;
- };
+  };
 
  public:
   T pop();
