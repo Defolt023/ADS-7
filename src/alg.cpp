@@ -5,12 +5,14 @@
 #include <string>
 template<typename T>
 class TPQueue {
+ 
  private:
   struct ITEM {
   T value;
-  ITEM next;
-  ITEMprev;
+  ITEM *nt;
+  ITEM *pv;
 };
+ 
  public:
   T pop();
   void push(const T& value);
@@ -19,6 +21,7 @@ class TPQueue {
   while (hd)
   pop();
 }
+ 
  private:
   TPQueue::ITEM create(const T& value) {
   ITEMitem = new ITEM;
@@ -27,13 +30,13 @@ class TPQueue {
   im->pv = nullptr;
   return im;
  }
-  ITEM tl;
-  ITEMhd;
+  ITEM *tl;
+  ITEM *hd;
 };
 template<typename T>
-void TPQueue<T>::push(const T& value) {
-  ITEM tp = hd;
-  ITEMitem = create(
+  void TPQueue<T>::push(const T& value) {
+  ITEM *tp = hd;
+  ITEM *im = create(
   while (tp && tp->value.prior >= value.prior)
   tp = tp->nt;
   if (!tp && hd) {
@@ -54,18 +57,18 @@ void TPQueue<T>::push(const T& value) {
   }
 }
 template<typename T>
-T TPQueue<T>::pop() {
- if (hd) {
- ITEMtp = hd->nt;
- if (tp)
- tp->pv = nullptr;
- T value = hd->value;
- delete hd;
- if (!hd) tl = nullptr;
- hd = tp;
- return value;
- } else {
- throw std::string("It is Empty!");
+  T TPQueue<T>::pop() {
+  if (hd) {
+  ITEMtp = hd->nt;
+  if (tp)
+  tp->pv = nullptr;
+  T value = hd->value;
+  delete hd;
+  if (!hd) tl = nullptr;
+  hd = tp;
+  return value;
+  } else {
+  throw std::string("It is Empty!");
  }
 }
 struct SYM {
