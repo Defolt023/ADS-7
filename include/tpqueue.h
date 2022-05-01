@@ -1,6 +1,6 @@
 // Copyright 2022 NNTU-CS
-#ifndef INCLUDE_TPQUEUEH
-#define INCLUDE_TPQUEUEH
+#ifndef INCLUDE_TPQUEUE_H_
+#define INCLUDE_TPQUEUE_H_
 #include <iostream>
 #include <string>
 template<typename T>
@@ -74,4 +74,4 @@ struct SYM {
   char ch;
   int prior;
 };
-#endif  // INCLUDE_TPQUEUEH
+#endif  // INCLUDE_TPQUEUE_H_
