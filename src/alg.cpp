@@ -5,13 +5,12 @@
 #include <string>
 template<typename T>
 class TPQueue {
-
  private:
   struct ITEM {
   T value;
   ITEM *nt;
   ITEM *pv;
-};
+ };
 
  public:
   T pop();
@@ -24,7 +23,7 @@ class TPQueue {
 
  private:
   TPQueue::ITEM create(const T& value) {
-  ITEMitem = new ITEM;
+  ITEM *im = new ITEM;
   im->value = value;
   im->nt = nullptr;
   im->pv = nullptr;
@@ -59,7 +58,7 @@ template<typename T>
 template<typename T>
   T TPQueue<T>::pop() {
   if (hd) {
-  ITEMtp = hd->nt;
+  ITEM *tp = hd->nt;
   if (tp)
   tp->pv = nullptr;
   T value = hd->value;
