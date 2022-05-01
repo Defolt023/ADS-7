@@ -22,7 +22,7 @@ class TPQueue {
 }
 
  private:
-  TPQueue::ITEM create(const T& value) {
+  TPQueue::ITEM *create(const T& value) {
   ITEM *im = new ITEM;
   im->value = value;
   im->nt = nullptr;
