@@ -5,14 +5,14 @@
 #include <string>
 template<typename T>
 class TPQueue {
- 
+
  private:
   struct ITEM {
   T value;
   ITEM *nt;
   ITEM *pv;
 };
- 
+
  public:
   T pop();
   void push(const T& value);
@@ -21,7 +21,7 @@ class TPQueue {
   while (hd)
   pop();
 }
- 
+
  private:
   TPQueue::ITEM create(const T& value) {
   ITEMitem = new ITEM;
@@ -29,7 +29,7 @@ class TPQueue {
   im->nt = nullptr;
   im->pv = nullptr;
   return im;
- }
+}
   ITEM *tl;
   ITEM *hd;
 };
@@ -69,7 +69,7 @@ template<typename T>
   return value;
   } else {
   throw std::string("It is Empty!");
- }
+}
 }
 struct SYM {
   char ch;
